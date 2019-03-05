@@ -4,7 +4,7 @@ STATIC  = false
 OPENSSL = /home/user/src/openssl-0.9.8e
 
 CFLAGS  = -fno-exceptions -fno-rtti -O2 -I$(LUA) -L$(LUA)
-CFLAGS+= -I$(OPENSSL)/include -L$(OPENSSL)/lib/openwrt
+CFLAGS+= -I$(OPENSSL)/include -L$(OPENSSL)/lib/
 SRC     = main.cpp soap.cpp mem.cpp mcast.cpp luaxlib.cpp luaxcore.cpp luajson.cpp luajson_parser.cpp
 LUAMYCFLAGS = -DLUA_USE_LINUX
 
