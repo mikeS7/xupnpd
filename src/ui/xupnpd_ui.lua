@@ -50,11 +50,15 @@ function ui_download(name)
             'HTTP/1.1 200 Ok\r\nPragma: no-cache\r\nCache-control: no-cache\r\nDate: %s\r\nServer: %s\r\nAccept-Ranges: none\r\n'..
             'Connection: close\r\nContent-Type: audio/x-mpegurl\r\n\r\n',os.date('!%a, %d %b %Y %H:%M:%S GMT'),ssdp_server)
     )
-
+--[[
     http.send('#EXTM3U\n')
     for i,j in ipairs(pls.elements) do
         http.send('#EXTINF:0,'..j.name..'\n'..playlist_get_url(j)..'\n')
     end
+--]]
+
+  http.sendfile(cfg.playlists_path..name..'.m3u')
+
 end
 
 function ui_playlists()
