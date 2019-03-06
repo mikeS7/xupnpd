@@ -644,8 +644,8 @@ function ui_handler(args,data,ip,url,methtod,cookie)
 
     if action then
         local  path_file , file_format =string.match(action, "(.+%.(%a+))[%?]?.*$")
-
-	if  file_format == 'm3u' then
+        local m3u_format =string.match(action, "^.+(%..+)$")
+	if  m3u_format == '.m3u' then
 		ui_download(action)
 		return
 	elseif file_format then
