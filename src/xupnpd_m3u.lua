@@ -166,6 +166,7 @@ function reload_playlists()
                                 group.elements={}
                                 group.size=0
                                 group.virtual=true
+                                if pls.acl then group.acl=pls.acl end
                                 groups[group_title]=group
                             end
 
